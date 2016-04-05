@@ -1,7 +1,7 @@
-<% if @school.errors.any? %>
+<% if @teacher.errors.any? %>
   <section>
     <ul>
-      <% @school.errors.full_messages.each do |err| %>
+      <% @teacher.errors.full_messages.each do |err| %>
         <li>
           <%= err %>
         </li>
@@ -9,10 +9,8 @@
     </ul>
   </section>
 <% end %>
-<%= form_for(@school) do |f| %>
+<%= form_for(@teacher, url: school_teachers_path) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
-<%= f.label :motto %>
-<%= f.text_field :motto %>
 <%= f.submit class: "blue darken-2 waves-effect waves-light btn" %>
 <% end %>

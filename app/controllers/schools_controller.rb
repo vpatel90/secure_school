@@ -20,6 +20,28 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def edit
+    @school = get_school_by_id
+  end
+
+  def update
+    @school = get_school_by_id
+    if @school.update(school_params)
+      redirect_to school_path(@school.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @school = get_school_by_id
+    if @school.destroy
+      redirect_to schools_path
+    else
+      redirect_to (:back)
+    end
+  end
+
   private
   def school_params
     params.require(:school).permit(:name, :motto)

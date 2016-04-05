@@ -3,4 +3,8 @@ class Teacher < ActiveRecord::Base
   has_many :concentrations
 
   validates :name, presence: true
+
+  def school_id
+    school.id
+  end
 end

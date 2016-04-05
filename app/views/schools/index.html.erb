@@ -5,4 +5,5 @@
 <% @schools.each do |school| %>
 <%= render partial: "schoolbox",
             locals: { school: school }%>
+<small><%= link_to "Teachers", school_teachers_path(school.id) %></small>
 <% end %>
