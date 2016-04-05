@@ -10,6 +10,7 @@ class TeachersController < ApplicationController
   end
 
   def new
+    @school = get_school
     @teacher = Teacher.new
   end
 
@@ -20,6 +21,30 @@ class TeachersController < ApplicationController
       redirect_to school_teachers_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @school = get_school
+    @teacher = get_teacher
+  end
+
+  def update
+    @school = get_school
+    @teacher = get_teacher
+    if @teacher.update(teacher_params)
+      redirect_to school_teacher_path(@school, @teacher)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @teacher = get_teacher
+    if @teacher.destroy
+      redirect_to school_teachers_path
+    else
+      redirect_to (:back)
     end
   end
 
