@@ -1,2 +1,8 @@
 <h1>Schools#index</h1>
 <p>Find me in app/views/schools/index.html.erb</p>
+<%= link_to "Create New School", new_school_path, class:"right blue darken-2 waves-effect waves-light btn" %>
+
+<% @schools.each do |school| %>
+<%= render partial: "schoolbox",
+            locals: { school: school }%>
+<% end %>

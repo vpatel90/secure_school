@@ -1,0 +1,18 @@
+<% if @school.errors.any? %>
+  <section>
+    <ul>
+      <% @school.errors.full_messages.each do |err| %>
+        <li>
+          <%= err %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+<%= form_for(@school) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :motto %>
+<%= f.text_field :motto %>
+<%= f.submit "Create School", class: "blue darken-2 waves-effect waves-light btn" %>
+<% end %>
