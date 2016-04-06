@@ -11,10 +11,12 @@ class TeachersController < ApplicationController
 
   def new
     @school = get_school
+    @courses = @school.courses
     @teacher = Teacher.new
   end
 
   def create
+    binding.pry
     @school = get_school
     @teacher = @school.teachers.build(teacher_params)
     if @teacher.save

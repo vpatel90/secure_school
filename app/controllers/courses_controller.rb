@@ -46,6 +46,9 @@ class CoursesController < ApplicationController
     else
       redirect_to (:back)
     end
+    rescue ActiveRecord::InvalidForeignKey
+      redirect_to (:back)
+  
   end
 
   private

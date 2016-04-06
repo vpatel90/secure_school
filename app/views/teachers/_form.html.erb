@@ -10,8 +10,10 @@
   </section>
 <% end %>
 
+
 <%= form_for([@school, @teacher]) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
+
 <%= f.submit class: "blue darken-2 waves-effect waves-light btn" %>
 <% end %>
