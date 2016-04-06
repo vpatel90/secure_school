@@ -1,28 +1,27 @@
-== README
+##Secure School
+### A School Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Run the `rails s` command from the root of the project to start the server
+* Go to `http://localhost:3000/`
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Models
+* School
+	* Has name and motto
+* Teacher
+	* Has name and belongs to School
+* Course
+	* Has name, description and belongs to School
+* Student
+	* Has name and belongs to School
+* Concentration
+	* Join table for Teacher and Course
+* Enrollment
+	* Join table for Student and Course
+
+
+* Site features multiple CRUDs for almost all models
+* A separate home controller to display a home page
+
+Access the site on Heroku!
+`https://secure-school-app.herokuapp.com/`
