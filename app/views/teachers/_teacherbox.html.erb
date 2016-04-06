@@ -1,3 +1,16 @@
-<h3><%= link_to teacher.name,
-        school_teacher_path(school_id: teacher.school_id,
-                                   id: teacher.id) %></h3>
+
+  <div class="col s6">
+   <div class="card blue-grey darken-2">
+     <div class="card-content white-text">
+       <span class="card-title"><%= link_to teacher.name, school_teacher_path(school_id: teacher.school_id,
+                                  id: teacher.id) %></span>
+
+        <p> <%= teacher.school.name %> </p>
+        <% teacher.courses.each do |course| %>
+        <p> <%= course.name %> </p>
+        <% end %>
+       <div class="card-action">
+       </div>
+     </div>
+   </div>
+  </div>

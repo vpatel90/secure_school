@@ -5,3 +5,4 @@
 <% @courses.each do |course| %>
   <%= render partial: 'coursebox', locals: { course: course } %>
 <% end %>
+<%= paginate @courses %>

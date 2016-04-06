@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   def index
     @school = get_school
-    @courses = @school.courses
+    @courses = @school.courses.page params[:page]
   end
 
   def show
@@ -48,7 +48,7 @@ class CoursesController < ApplicationController
     end
     rescue ActiveRecord::InvalidForeignKey
       redirect_to (:back)
-  
+
   end
 
   private

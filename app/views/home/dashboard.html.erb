@@ -1,1 +1,11 @@
-<h1>Dashboards#index</h1>
+
+<div class="row">
+<h2> Newest Student </h2>
+<%= render partial: '/students/studentbox', locals:{ student:@last_student } %>
+</div>
+<h2> Top 10 Schools <small> by student count </small></h2>
+<div class="row">
+<% @top_schools.each do |school| %>
+<%= render partial: '/schools/schoolbox', locals:{ school:school }%>
+<% end %>
+</div>

@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @school = get_school
-    @students = @school.students
+    @students = @school.students.page params[:page]
   end
 
   def show

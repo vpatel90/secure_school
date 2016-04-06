@@ -1,12 +1,13 @@
 class TeachersController < ApplicationController
   def index
     @school = get_school
-    @teachers = @school.teachers
+    @teachers = @school.teachers.page params[:page]
   end
 
   def show
     @school = get_school
     @teacher = get_teacher
+    @enrollments = @teacher.students
   end
 
   def new

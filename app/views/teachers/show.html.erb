@@ -15,3 +15,7 @@
       <h3> <%= @teacher.name %> </h3>
     </div>
 </div>
+
+<% @enrollments.each do |enrollment| %>
+<p><%= enrollment.student_name %> | <%= enrollment.course_name %></p>
+<% end %>
