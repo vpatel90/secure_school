@@ -1,0 +1,19 @@
+<% if @course.errors.any? %>
+  <section>
+    <ul>
+      <% @course.errors.full_messages.each do |err| %>
+        <li>
+          <%= err %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+<%= form_for([@school, @course]) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.submit class: "blue darken-2 waves-effect waves-light btn" %>
+<% end %>

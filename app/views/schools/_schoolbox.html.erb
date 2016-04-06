@@ -1,2 +1,5 @@
 <h3> <%= link_to school.name, school_path(school.id) %></h3>
 <h5> <%= school.motto %>
+  <small><%= link_to "Teachers", school_teachers_path(school.id) %></small>
+  <small><%= link_to "Students", school_students_path(school.id) %></small>
+  <small><%= link_to "Courses", school_courses_path(school.id) %></small></h5>

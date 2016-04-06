@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  get 'courses/index'
+
+  get 'courses/show'
+
+  get 'courses/new'
+
   resources :schools do
     resources :teachers
+    resources :students
+    resources :courses
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
